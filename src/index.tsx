@@ -16,9 +16,13 @@ createServer({
                     type: 'deposit',
                     category: 'Food',
                     createdAt: new Date(),
-                }
-            ]
-        })
+                },
+            ];
+        });
+
+        this.post('/transactions', (schema, request) => {
+            return JSON.parse(request.requestBody);
+        });
     }
 })
 
