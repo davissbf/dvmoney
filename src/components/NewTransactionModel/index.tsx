@@ -4,7 +4,7 @@ import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import { Container, TransactionTypeContainer, RadioBox } from "./style";
 import { FormEvent, useState } from "react";
-import axios from "axios";
+import { api } from "../../services/api";
 
 interface NewTransactionModelProps {
     isOpen: boolean;
@@ -27,7 +27,7 @@ export function NewTransactionModal ({ isOpen, onRequestClose }: NewTransactionM
             typeTransaction,
         };
 
-        axios.post('/transactions', data)
+        api.post('/transactions', data)
     }
 
     return (
